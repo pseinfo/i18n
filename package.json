@@ -1,0 +1,20 @@
+{
+  "name": "@pseinfo/i18n",
+  "private": true,
+  "description": "Centralized localization for the @pseinfo project",
+  "license": "MIT",
+  "version": "0.0.0",
+  "author": {
+    "name": "komed3 (Paul Köhler)",
+    "email": "webmaster@komed3.de",
+    "url": "https://komed3.de"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^6.0.3"
+  }
+}
