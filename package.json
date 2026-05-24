@@ -10,6 +10,14 @@
     "url": "https://komed3.de"
   },
   "type": "module",
+  "files": [
+    "config",
+    "declaration",
+    "locales",
+    "types",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "lint": "npx tsc --noEmit"
   },
