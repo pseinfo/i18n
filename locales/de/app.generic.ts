@@ -1,4 +1,4 @@
-import { i18n__app_generic } from '../../declaration/app.generic';
+import type { i18n__app_generic } from '../../declaration/app.generic';
 
 export default ( {
   title: 'Periodensystem der Elemente'

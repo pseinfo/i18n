@@ -1,40 +1,41 @@
-import en__appGeneric from '../locales/en/app.generic';
+import type { I18nConfig, Resources } from '../types/config';
 
-import de__appGeneric from '../locales/de/app.generic';
+import en__app_generic from '../locales/en/app.generic';
+import de__app_generic from '../locales/de/app.generic';
 
 
 export const resources = {
   en: {
-    'app.generic': en__appGeneric
+    'app.generic': en__app_generic
   },
   de: {
-    'app.generic': de__appGeneric
+    'app.generic': de__app_generic
   }
-} as const;
+} as const satisfies Resources;
 
-export const init = {
-  resources,
-  lng: 'en',
-  fallbackLng: 'en',
-  ns: [ 'app.generic' ],
-  defaultNS: 'app.generic',
-  interpolation: {
-    escapeValue: false
-  }
-} as const;
-
-export const routing = {
-  defaultLocale: 'en',
-  locales: [ 'en', 'de' ],
+export default ( {
+  init: {
+    resources,
+    lng: 'en',
+    fallbackLng: 'en',
+    ns: [ 'app.generic' ],
+    defaultNS: 'app.generic',
+    interpolation: {
+      escapeValue: false
+    }
+  },
   routing: {
-    prefixDefaultLocale: false
+    defaultLocale: 'en',
+    locales: [ 'en', 'de' ],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
+  sitemap: {
+    defaultLocale: 'en',
+    locales: {
+      en: 'en-US',
+      de: 'de-DE'
+    }
   }
-} as const;
-
-export const sitemap = {
-  defaultLocale: 'en',
-  locales: {
-    en: 'en-US',
-    de: 'de-DE'
-  }
-} as const;
+} ) as const satisfies I18nConfig;
