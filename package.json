@@ -11,29 +11,26 @@
   },
   "type": "module",
   "files": [
-    "config",
-    "declaration",
-    "locales",
-    "types",
+    "src",
     "LICENSE",
     "README.md"
   ],
   "exports": {
     "./config/*": {
-      "import": "./config/*.ts",
-      "default": "./config/*.ts",
-      "types": "./config/*.ts"
+      "import": "./src/config/*.ts",
+      "default": "./src/config/*.ts",
+      "types": "./src/config/*.ts"
     },
     "./declaration/*": {
-      "types": "./declaration/*.d.ts"
+      "types": "./src/declaration/*.d.ts"
     },
     "./locales/*": {
-      "import": "./locales/**/*.ts",
-      "default": "./locales/**/*.ts",
-      "types": "./locales/**/*.ts"
+      "import": "./src/locales/**/*.ts",
+      "default": "./src/locales/**/*.ts",
+      "types": "./src/locales/**/*.ts"
     },
     "./types/*": {
-      "types": "./types/*.d.ts"
+      "types": "./src/types/*.d.ts"
     }
   },
   "scripts": {
