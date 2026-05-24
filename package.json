@@ -18,6 +18,20 @@
     "LICENSE",
     "README.md"
   ],
+  "exports": {
+    "./config": {
+      "import": "./config/*.ts"
+    },
+    "./declaration": {
+      "types": "./declaration/*.d.ts"
+    },
+    "./locales": {
+      "import": "./locales/*.ts"
+    },
+    "./types": {
+      "types": "./types/*.d.ts"
+    }
+  },
   "scripts": {
     "lint": "npx tsc --noEmit"
   },
