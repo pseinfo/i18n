@@ -39,16 +39,16 @@ export interface AppI18nSchema {
   'app.header': app_header;
 }
 
-// --- RESOURCE LOADER ---
+// --- RESOURCE LOADERS ---
 
-export type AppResourceLoader = {
+export type AppResourceLoaders = {
   [ L in AppLanguage ]: {
     [ N in AppNamespace ]:
       I18nextResourceLoader< AppI18nSchema, N >;
   };
 };
 
-export const resourceLoader = {
+export const resourceLoaders = {
   en: {
     'app.generic': () => import( '../locales/en/app.generic' ).then( m => m.default ),
     'app.header': () => import( '../locales/en/app.header' ).then( m => m.default )
@@ -57,7 +57,7 @@ export const resourceLoader = {
     'app.generic': () => import( '../locales/de/app.generic' ).then( m => m.default ),
     'app.header': () => import( '../locales/de/app.header' ).then( m => m.default )
   }
-} as const satisfies AppResourceLoader;
+} as const satisfies AppResourceLoaders;
 
 // --- I18NEXT CONFIG ---
 
@@ -66,9 +66,9 @@ export const i18nextConfig = {
   lng: AppDefaultLanguage,
   fallbackLng: AppDefaultLanguage,
   supportedLngs: AppLanguages,
-  ns: [],
+  ns: [] as const,
   defaultNS: AppDefaultNS,
-  resources: {},
+  resources: {} as const,
   enableSelector: true,
   interpolation: {
     escapeValue: false

@@ -1,7 +1,7 @@
 import type { Language, Namespace } from '../declaration';
 
 
-export type I18nextResource = Record< string, any >;
+export type I18nextResource = object;
 
 export type I18nextSchema<
   R extends I18nextResource = I18nextResource
