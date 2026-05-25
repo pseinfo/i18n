@@ -55,6 +55,16 @@ export interface AppConfig extends I18nConfig {
       fallbackType: 'redirect';
     };
   };
+  integrations: {
+    sitemap: {
+      defaultLocale: 'en';
+      locales: {
+        en: 'en-US';
+        de: 'de-DE';
+        fr: 'fr-FR';
+      };
+    };
+  };
 }
 
 export default ( {
@@ -87,6 +97,16 @@ export default ( {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: true,
       fallbackType: 'redirect'
+    }
+  },
+  integrations: {
+    sitemap: {
+      defaultLocale: 'en',
+      locales: {
+        en: 'en-US',
+        de: 'de-DE',
+        fr: 'fr-FR'
+      }
     }
   }
 } ) as const satisfies AppConfig;
