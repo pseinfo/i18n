@@ -17,19 +17,19 @@
   ],
   "exports": {
     "./config/*": {
-      "import": "./src/config/*.ts",
-      "default": "./src/config/*.ts",
-      "types": "./src/config/*.ts"
+      "import": "./src/configs/*.ts",
+      "default": "./src/configs/*.ts",
+      "types": "./src/configs/*.ts"
     },
     "./declaration/*": {
-      "types": "./src/declaration/*.d.ts"
+      "types": "./src/declarations/*.d.ts"
     },
-    "./locales/*": {
+    "./locale/*": {
       "import": "./src/locales/**/*.ts",
       "default": "./src/locales/**/*.ts",
       "types": "./src/locales/**/*.ts"
     },
-    "./types/*": {
+    "./type/*": {
       "types": "./src/types/*.d.ts"
     }
   },
