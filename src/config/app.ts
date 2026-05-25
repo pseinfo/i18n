@@ -1,6 +1,6 @@
 import type { AstroConfig } from '../types/astro';
-import type { I18nConfig } from '../types/config';
-import type { I18nextConfig, I18nextResourceLoader } from '../types/i18next';
+import type { ProjectConfig } from '../types/config';
+import type { I18nextConfig, I18nextResourceLoaders } from '../types/i18next';
 import type { IntegrationsConfig } from '../types/integrations';
 
 import type app_generic from '../declaration/namespaces/app.generic';
@@ -44,12 +44,9 @@ export interface AppI18nSchema {
 
 // --- RESOURCE LOADERS ---
 
-export type AppResourceLoaders = {
-  [ L in AppLanguage ]: {
-    [ N in AppNamespace ]:
-      I18nextResourceLoader< AppI18nSchema, N >;
-  };
-};
+export type AppResourceLoaders = I18nextResourceLoaders<
+  AppI18nSchema, AppLanguage, AppNamespace
+>;
 
 export const resourceLoaders = {
   en: {
@@ -111,4 +108,4 @@ export default ( {
   i18next: i18nextConfig,
   astro: astroConfig,
   integrations: integrationsConfig
-} ) as const satisfies I18nConfig;
+} ) as const satisfies ProjectConfig;

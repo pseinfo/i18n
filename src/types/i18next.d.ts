@@ -3,18 +3,29 @@ import type { Language, Namespace } from '../declaration';
 
 export type I18nextResource = object;
 
-export type I18nextSchema<
-  R extends I18nextResource = I18nextResource
-> = { [ N in Namespace ]?: R };
+export type I18nextSchema = {
+  [ N in Namespace ]?: I18nextResource;
+};
 
-export type I18nextResources<
-  R extends I18nextResource = I18nextResource
-> = { [ L in Language ]?: I18nextSchema< R > }
+export type I18nextResources = {
+  [ L in Language ]?: I18nextSchema;
+};
 
 export type I18nextResourceLoader<
-  R extends I18nextSchema,
+  S extends I18nextSchema,
   N extends Namespace
-> = () => Promise< R[ N ] >;
+> = () => Promise< S[ N ] >;
+
+export type I18nextResourceLoaders<
+  S extends I18nextSchema,
+  L extends Language,
+  N extends Namespace
+> = {
+  [ K in L ]: {
+    [ NS in N ]:
+      I18nextResourceLoader< S, NS >;
+  };
+};
 
 interface I18nextBaseConfig {
   lng: Language;
