@@ -44,8 +44,17 @@ export interface AppConfig extends I18nConfig {
     enableSelector: true;
     interpolation: {
       escapeValue: false;
-    }
-  }
+    };
+  };
+  astro: {
+    locales: AppLanguages;
+    defaultLocale: AppDefaultLanguage;
+    routing: {
+      prefixDefaultLocale: true;
+      redirectToDefaultLocale: true;
+      fallbackType: 'redirect';
+    };
+  };
 }
 
 export default ( {
@@ -65,6 +74,19 @@ export default ( {
     enableSelector: true,
     interpolation: {
       escapeValue: false
+    }
+  },
+  astro: {
+    locales: [
+      'en',
+      'de',
+      'fr'
+    ],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+      fallbackType: 'redirect'
     }
   }
 } ) as const satisfies AppConfig;
