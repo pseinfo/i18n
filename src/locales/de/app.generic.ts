@@ -1,4 +1,4 @@
-import app_generic from '../../declarations/namespaces/app.generic';
+import app_generic from '../../declaration/namespaces/app.generic';
 
 
 export default ( {

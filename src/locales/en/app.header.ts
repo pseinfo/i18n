@@ -1,4 +1,4 @@
-import app_header from '../../declarations/namespaces/app.header';
+import app_header from '../../declaration/namespaces/app.header';
 
 
 export default ( {

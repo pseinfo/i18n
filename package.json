@@ -17,12 +17,12 @@
   ],
   "exports": {
     "./config/*": {
-      "import": "./src/configs/*.ts",
-      "default": "./src/configs/*.ts",
-      "types": "./src/configs/*.ts"
+      "import": "./src/config/*.ts",
+      "default": "./src/config/*.ts",
+      "types": "./src/config/*.ts"
     },
     "./declaration/*": {
-      "types": "./src/declarations/*.d.ts"
+      "types": "./src/declaration/*.d.ts"
     },
     "./locale/*": {
       "import": "./src/locales/**/*.ts",
