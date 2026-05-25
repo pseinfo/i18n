@@ -1,5 +1,10 @@
-import type { i18n__app_generic } from '../../declaration/app.generic';
+import type { app_generic } from '../../declarations/namespaces/app.generic';
+
 
 export default ( {
-  title: 'Periodic Table of Elements'
-} ) as const satisfies i18n__app_generic;
+  identity: {
+    title: 'Periodic Table of Elements',
+    shortTitle: 'Periodic Table',
+    description: 'Interactive periodic table with atomic, chemical and physical properties of all known elements. Element lists, scales and much more free, free and open source.'
+  }
+} ) as const satisfies app_generic;
