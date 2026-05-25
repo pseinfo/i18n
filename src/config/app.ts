@@ -1,10 +1,13 @@
+import type { AstroConfig } from '../types/astro';
+import type { I18nConfig } from '../types/config';
 import type { I18nextConfig, I18nextResourceLoader } from '../types/i18next';
+import type { IntegrationsConfig } from '../types/integrations';
 
 import type app_generic from '../declaration/namespaces/app.generic';
 import type app_header from '../declaration/namespaces/app.header';
 
 
-// -- NAMESPACES ---
+// --- NAMESPACES ---
 
 export const AppNamespaces = [
   'app.generic',
@@ -76,3 +79,36 @@ export const i18nextConfig = {
 } as const satisfies I18nextConfig;
 
 export type AppI18nextConfig = typeof i18nextConfig;
+
+// --- ASTRO CONFIG ---
+
+export const astroConfig = {
+  locales: AppLanguages,
+  defaultLocale: AppDefaultLanguage,
+  routing: {
+    prefixDefaultLocale: true,
+    redirectToDefaultLocale: true,
+    fallbackType: 'redirect'
+  }
+} as const satisfies AstroConfig;
+
+export const integrationsConfig = {
+  sitemap: {
+    defaultLocale: AppDefaultLanguage,
+    locales: {
+      en: 'en-US',
+      de: 'de-DE'
+    }
+  }
+} as const satisfies IntegrationsConfig;
+
+export type AppAstroConfig = typeof astroConfig;
+export type AppIntegrationsConfig = typeof integrationsConfig;
+
+// --- DEFAULT EXPORT ---
+
+export default ( {
+  i18next: i18nextConfig,
+  astro: astroConfig,
+  integrations: integrationsConfig
+} ) as const satisfies I18nConfig;
