@@ -8,15 +8,16 @@ import fr__app_generic from '../locales/fr/app.generic';
 
 export type AppNamespaces = [ 'app.generic' ];
 export type AppLanguages = [ 'en', 'de', 'fr' ];
-export type DefaultAppNS = 'app.generic';
-export type DefaultAppLanguage = 'en';
+export type AppDefaultNS = 'app.generic';
+export type AppDefaultLanguage = 'en';
 
-export interface Resources {
+export interface AppI18nResources {
   'app.generic': app_generic;
 }
 
+
 export type AppResources = {
-  [ L in AppLanguages[ number ] ]: Resources;
+  [ L in AppLanguages[ number ] ]: AppI18nResources;
 };
 
 export const resources = {
@@ -31,13 +32,14 @@ export const resources = {
   }
 } as const satisfies AppResources;
 
+
 export interface AppConfig extends I18nConfig {
   i18next: {
-    lng: DefaultAppLanguage;
-    fallbackLng: DefaultAppLanguage;
+    lng: AppDefaultLanguage;
+    fallbackLng: AppDefaultLanguage;
     supportedLngs: AppLanguages;
     ns: AppNamespaces;
-    defaultNS: DefaultAppNS;
+    defaultNS: AppDefaultNS;
     resources: AppResources;
     enableSelector: true;
     interpolation: {
