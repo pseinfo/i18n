@@ -1,7 +1,7 @@
-export type Languages =
+export type Language =
   | 'en'
   | 'de'
   | 'fr';
 
-export type Namespaces =
+export type Namespace =
   | 'app.generic';

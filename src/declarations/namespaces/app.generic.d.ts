@@ -1,4 +1,4 @@
-export interface app_generic {
+export default interface app_generic {
   identity: {
     title: string;
     shortTitle: string;

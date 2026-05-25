@@ -1,4 +1,4 @@
-import type { app_generic } from '../../declarations/namespaces/app.generic';
+import type app_generic from '../../declarations/namespaces/app.generic';
 
 
 export default ( {
