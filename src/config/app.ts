@@ -1,4 +1,4 @@
-import type { I18nextResourceLoader } from '../types/i18next';
+import type { I18nextConfig, I18nextResourceLoader } from '../types/i18next';
 
 import type app_generic from '../declaration/namespaces/app.generic';
 import type app_header from '../declaration/namespaces/app.header';
@@ -58,3 +58,21 @@ export const resourceLoader = {
     'app.header': () => import( '../locales/de/app.header' ).then( m => m.default )
   }
 } as const satisfies AppResourceLoader;
+
+// --- I18NEXT CONFIG ---
+
+export const i18nextConfig = {
+  partialBundledLanguages: true,
+  lng: AppDefaultLanguage,
+  fallbackLng: AppDefaultLanguage,
+  supportedLngs: AppLanguages,
+  ns: [],
+  defaultNS: AppDefaultNS,
+  resources: {},
+  enableSelector: true,
+  interpolation: {
+    escapeValue: false
+  }
+} as const satisfies I18nextConfig;
+
+export type AppI18nextConfig = typeof i18nextConfig;
